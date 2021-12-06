@@ -24,7 +24,7 @@ public class Producto implements Serializable{
 	
 	private String nombre;
 	
-	@Column(name = "is_categoria")
+	@Column(name = "id_categoria")
 	private Integer idCategoria;
 	
 	@Column(name = "codigo_barras")
@@ -96,6 +96,14 @@ public class Producto implements Serializable{
 
 	public void setEstado(Boolean estado) {
 		this.estado = estado;
-	}		
+	}
 
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}		
+	
 }

@@ -23,7 +23,7 @@ public interface ProductMapper {
 		@Mapping(source = "categoria", target = "category"),		
 	})
 	Product toProduct(Producto product);
-	List<Product> toProducts(List<Producto> producto);
+	List<Product> toProducts(List<Producto> productos);
 	
 	@InheritInverseConfiguration
 	@Mapping(target = "codigoBarras", ignore = true)

@@ -20,10 +20,10 @@ public class Cliente implements Serializable{
     private String nombre;
     private String apellidos;
     private Long celular;
-    private String direccion;
-
+    private String direccion; 
     @Column(name="correo_electronico")
     private String correoElectronico;
+    private Boolean estado = true;
     
     @OneToMany(mappedBy = "cliente")
     private List<Compra> compras;
@@ -75,6 +75,33 @@ public class Cliente implements Serializable{
 	public void setCorreoElectronico(String correoElectronico) {
 		this.correoElectronico = correoElectronico;
 	}
+
+	public List<Compra> getCompras() {
+		return compras;
+	}
+
+	public void setCompras(List<Compra> compras) {
+		this.compras = compras;
+	}
     
-    
+    public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
+
+	public boolean isActive() {
+    	return true;
+    }
+
+	@Override
+	public String toString() {
+		return "Cliente [id=" + id + ", nombre=" + nombre + ", apellidos=" + apellidos + ", celular=" + celular
+				+ ", direccion=" + direccion + ", correoElectronico=" + correoElectronico + ", estado=" + estado
+				+ ", compras=" + compras + "]";
+	}
+	
+	
 }

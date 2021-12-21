@@ -29,6 +29,9 @@ public class Compra implements Serializable{
 	@Column(name = "id_cliente")
 	private String idCliente;
 	
+	@Column(name = "id_usuario")
+	private Integer idUsuario;
+		
 	private LocalDateTime fecha;
 	
 	@Column(name = "medio_pago")
@@ -44,6 +47,10 @@ public class Compra implements Serializable{
 	
 	@OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
 	private List<ComprasProducto> productos;
+	
+	@ManyToOne
+	@JoinColumn(name = "id_usuario", insertable = false, updatable = false)
+	private Usuario usuario;
 
 	public Integer getIdCompra() {
 		return idCompra;
@@ -107,6 +114,23 @@ public class Compra implements Serializable{
 
 	public void setProductos(List<ComprasProducto> productos) {
 		this.productos = productos;
+	}
+
+	public Integer getIdUsuario() {
+		return idUsuario;
+	}
+
+	public void setIdUsuario(Integer idUsuario) {
+		this.idUsuario = idUsuario;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}	
 
+	
 }

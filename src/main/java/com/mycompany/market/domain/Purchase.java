@@ -7,6 +7,7 @@ public class Purchase {
 
 	 private int purchaseId;
 	 private String clientId;
+	 private String userId;
 	 private LocalDateTime date;
 	 private String paymentMethod;
 	 private String coments;
@@ -24,6 +25,13 @@ public class Purchase {
 	}
 	public void setClientId(String clientId) {
 		this.clientId = clientId;
+	}
+	
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 	public LocalDateTime getDate() {
 		return date;
